@@ -1,3 +1,9 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Customer class derived from the Order class. 
+*/
 public class Customer : Order
 {
     public string Name { get; set; }

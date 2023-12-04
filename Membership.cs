@@ -1,3 +1,9 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Membership class derived from the Customer class.
+*/
 public class Membership : Customer
 {
     public bool MemberStatus { get; set; }

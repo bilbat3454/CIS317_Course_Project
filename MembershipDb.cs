@@ -1,3 +1,9 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Membership class database. 
+*/
 using System.Data.SQLite;
 
 public class MembershipDb
@@ -8,7 +14,7 @@ public class MembershipDb
         string sql =
             "CREATE TABLE IF NOT EXISTS Membership (\n"
             + "   ID integer PRIMARY KEY\n"
-            + "   ,MemberStatus bool);"
+            + "   ,MemberStatus integer);";
 
         SQLiteCommand cmd = conn.CreateCommand();
         cmd.CommandText = sql;
@@ -57,7 +63,7 @@ public class MembershipDb
         {
             customer.Add(new Membership(
                 rdr.GetInt32(0),
-                rdr.GetString(1)
+                rdr.GetInt32(1)
             ));
         }
 
@@ -77,12 +83,12 @@ public class MembershipDb
         {
             return new Membership(
                 rdr.GetInt32(0),
-                rdr.GetString(1)
+                rdr.GetInt32(1)
             );
         }
         else
         {
-            return new Membership(-1, string.Empty, string.Empty, -1);
+            return new Membership(-1, -1);
         }
     }
 }

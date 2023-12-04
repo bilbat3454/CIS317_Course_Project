@@ -1,3 +1,9 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Customer class database.
+*/
 using System.Data.SQLite;
 
 public class CustomerDb
@@ -10,7 +16,7 @@ public class CustomerDb
             + "   ID integer PRIMARY KEY\n"
             + "   ,Name varchar(40)\n"
             + "   ,Address varchar(40)\n"
-            + "   ,CustomerID integer);"
+            + "   ,CustomerID integer);";
 
         SQLiteCommand cmd = conn.CreateCommand();
         cmd.CommandText = sql;

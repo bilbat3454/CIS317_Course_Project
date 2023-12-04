@@ -1,10 +1,16 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Clothing class database. 
+*/
 using System.Data.SQLite;
 
 public class ClothingDb
 {
     public static void CreateTable(SQLiteConnection conn)
     {
-        // SQL statement for creating a new table
+        
         string sql =
             "CREATE TABLE IF NOT EXISTS Clothing (\n"
             + "   ID integer PRIMARY KEY\n"
@@ -12,7 +18,7 @@ public class ClothingDb
             + "   ,ClothingName varchar(40)\n"
             + "   ,Qty integer\n"
             + "   ,Cost integer\n"
-            + "   ,BackorderStatus bool);"
+            + "   ,BackorderStatus integer);";
 
         SQLiteCommand cmd = conn.CreateCommand();
         cmd.CommandText = sql;
@@ -65,7 +71,7 @@ public class ClothingDb
                 rdr.GetString(2),
                 rdr.GetInt32(3),
                 rdr.GetInt32(4),
-                rdr.GetString(5)
+                rdr.GetInt32(5)
             ));
         }
 
@@ -89,12 +95,12 @@ public class ClothingDb
                 rdr.GetString(2),
                 rdr.GetInt32(3),
                 rdr.GetInt32(4),
-                rdr.GetString(5)  
+                rdr.GetInt32(5)  
             );
         }
         else
         {
-            return new Clothing(-1, string.Empty, string.Empty, -1);
+            return new Clothing(-1, -1, string.Empty, -1, -1, -1);
         }
     }
 }

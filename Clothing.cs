@@ -1,3 +1,9 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Clothing class derived from the Order class.
+*/
 public class Clothing : Order
 {
     public int ClothingID { get; set; }

@@ -1,3 +1,9 @@
+/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Order class database. 
+*/
 using System.Data.SQLite;
 
 public class OrderDb
@@ -10,7 +16,7 @@ public class OrderDb
             + "   ID integer PRIMARY KEY\n"
             + "   ,OrderNum integer\n"
             + "   ,OrderDate varchar(20)\n"
-            + "   ,ShippingStatus bool);"
+            + "   ,ShippingStatus integer);";
 
         SQLiteCommand cmd = conn.CreateCommand();
         cmd.CommandText = sql;
@@ -61,7 +67,7 @@ public class OrderDb
                 rdr.GetInt32(0),
                 rdr.GetInt32(1),
                 rdr.GetString(2),
-                rdr.GetString(3)
+                rdr.GetInt32(3)
             ));
         }
 
@@ -83,12 +89,12 @@ public class OrderDb
                 rdr.GetInt32(0),
                 rdr.GetInt32(1),
                 rdr.GetString(2),
-                rdr.GetString(3)
+                rdr.GetInt32(3)
             );
         }
         else
         {
-            return new Order(-1, string.Empty, string.Empty, -1);
+            return new Order(-1, -1, string.Empty, -1);
         }
     }
 }

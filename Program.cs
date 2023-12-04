@@ -1,4 +1,11 @@
-﻿class Program 
+﻿/*
+Name: Bilal Bates
+Date: 12/3/23
+Assignment: CIS317 Course Project
+Description: This is the Program class that is displaying the output information as 
+    well as inplementing the database information. 
+*/
+class Program 
 {
     static void Main(string[] args)
     {
@@ -28,5 +35,12 @@
             "\n   Quantity: {9}\n   Cost: ${10}\n   Backorder Status: {11}", 
             o2.OrderNum, o2.OrderDate, o2.ShippingStatus ? "Shipped" : "Not Shipped", m2.Name, m2.Address, m2.CustomerID, m2.MemberStatus ? "Yes" : "No", cc2.ClothingID,
             cc2.ClothingName, cc2.Qty, cc2.Cost, cc2.BackorderStatus ? "Backordered" : "Not Backordered");
+
+        /*
+        Still need to insert the variables into the database here 
+        */
+        const string dbName = "Order.db";
+        SQLiteConnection conn = SQLiteDatabase.Connect(dbName);
+
     }
 }
